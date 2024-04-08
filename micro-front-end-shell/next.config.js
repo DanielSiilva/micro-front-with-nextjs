@@ -1,11 +1,9 @@
-const {
-  withModuleFederation,
-} = require("@module-federation/nextjs-mf");
+const { withModuleFederation } = require("@module-federation/nextjs-mf");
 
 module.exports = {
   future: { webpack5: true },
   images: {
-    domains: ['upload.wikimedia.org'],
+    domains: ["upload.wikimedia.org"],
   },
   webpack: (config, options) => {
     const mfConf = {
@@ -19,6 +17,7 @@ module.exports = {
         app2: "app2",
       },
       exposes: {
+        "./store": "./features/cart/store",
       },
     };
     config.cache = false;
