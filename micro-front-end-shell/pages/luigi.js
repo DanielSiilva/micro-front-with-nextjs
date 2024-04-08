@@ -1,10 +1,12 @@
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 
-const RemoteLuigi = dynamic(
-  () => import("app1/luigi"),
-  { ssr: false }
-)
+const LoadingComponent = () => <div>Carregando...</div>;
 
-const App2 = () => (<RemoteLuigi />)
+const RemoteLuigi = dynamic(() => import("app1/luigi"), {
+  ssr: false,
+  loading: () => <LoadingComponent />,
+});
 
-export default App2
+const App2 = () => <RemoteLuigi />;
+
+export default App2;
