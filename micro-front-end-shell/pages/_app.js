@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Provider store={store}>
         <Nav />
+
         <Component {...pageProps} />
       </Provider>
     </>

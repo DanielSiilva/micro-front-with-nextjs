@@ -14,7 +14,9 @@ module.exports = {
         name: "app2",
       },
       filename: "static/runtime/app2remoteEntry.js",
-      remotes: {},
+      remotes: {
+        shell: "shell",
+      },
       exposes: {
         "./mario": "./components/mario",
       },

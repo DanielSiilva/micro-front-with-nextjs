@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import Mario from '../components/mario'
-import styles from '../styles/Home.module.css'
-
+import Head from "next/head";
+import Mario from "../components/mario";
+import styles from "../styles/Home.module.css";
+import { useSelector } from "react-redux";
+import { addItem, removeItem } from "shell/features/cart/cartSlice";
 
 export default function Home() {
   return (
@@ -14,5 +15,5 @@ export default function Home() {
 
       <Mario />
     </div>
-  )
+  );
 }
